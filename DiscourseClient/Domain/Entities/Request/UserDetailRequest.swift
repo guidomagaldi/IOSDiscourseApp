@@ -22,7 +22,7 @@ struct UserDetailRequest: APIRequest {
     }
     
     var path: String {
-        return "/u/\(username).json"
+        return "/users/\(username).json"
     }
     
     var parameters: [String : String] {
