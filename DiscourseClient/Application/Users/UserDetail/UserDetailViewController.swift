@@ -18,6 +18,7 @@ class UserDetailViewController: UIViewController {
     init(viewModel: UserDetailViewModel){
         self.viewModel = viewModel
         super.init(nibName: "UserDetailViewController", bundle: nil)
+        viewModel.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -27,17 +28,22 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchUserDetail()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.showLoading()
+        }
         
     }
 
 }
 
 extension UserDetailViewController: UserDetailProtocol{
-    func onUserFetched() {
-        userId.text = "gato"
-        userName.text = "\(viewModel.username)"
-        
+    func onUserFetched(user: UserDetail) {
+        userId.text = "\(user.id)"
+        userName.text = "\(user.username)"
+        hideLoading()
     }
+    
+ 
     
     func onUserFetchedError() {
         showAlert(title: "No User Detail")

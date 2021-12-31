@@ -9,7 +9,7 @@ import Foundation
 
 struct UserDetailRequest: APIRequest {
     
-    typealias Response = UserDetail
+    typealias Response = UserDetailResponse
     
     let username: String
     

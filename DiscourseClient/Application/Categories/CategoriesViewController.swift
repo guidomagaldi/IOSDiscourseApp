@@ -19,9 +19,11 @@ class CategoriesViewController: UIViewController {
     
     let viewModel: CategoriesViewModel
     
+    
     init(viewModel: CategoriesViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.view = self
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -34,7 +36,7 @@ class CategoriesViewController: UIViewController {
         }
         
     }
-
+    
     override func loadView() {
         view = UIView()
         view.backgroundColor = .gray
@@ -57,21 +59,23 @@ extension CategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let category = viewModel.category(from: indexPath.row)
-        cell.textLabel?.text = category.name
+        cell.textLabel?.text = "\(category.id) - \(category.name) "
+        cell.backgroundColor = UIColor(hexString: "#(\(category.color)")
         return cell
     }
 }
 
 extension CategoriesViewController: UITableViewDelegate {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRowAt(at: indexPath.row)
     }
-
+}
 
 extension CategoriesViewController: CategoryViewProtocol{
     func OnCategoryFetched() {
         hideLoading()
         table.reloadData()
-        showAlert(title: "success")
+        
     }
     
     func OnCategoryFetchedError() {
@@ -79,6 +83,6 @@ extension CategoriesViewController: CategoryViewProtocol{
         showAlert(title: "Error fetching Categories")
     }
     
-    
 }
+
 

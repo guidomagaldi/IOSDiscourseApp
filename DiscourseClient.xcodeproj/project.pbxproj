@@ -10,6 +10,11 @@
 		06141758277BB9B500C72151 /* UserDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06141757277BB9B500C72151 /* UserDetailRequest.swift */; };
 		067E7B88277B854B009E9519 /* CategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E7B87277B854B009E9519 /* CategoryRequest.swift */; };
 		06D61AB5277A4B1E002EC397 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D61AB4277A4B1E002EC397 /* UserRequest.swift */; };
+		06DE709C277E3FCA001CACE8 /* CategoryDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE709B277E3FCA001CACE8 /* CategoryDetailCoordinator.swift */; };
+		06DE709E277E3FE9001CACE8 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE709D277E3FE9001CACE8 /* CategoryDetailViewController.swift */; };
+		06DE70A0277E3FFB001CACE8 /* CategoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE709F277E3FFB001CACE8 /* CategoryDetailViewModel.swift */; };
+		06DE70A2277E4025001CACE8 /* CategoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06DE70A1277E4025001CACE8 /* CategoryDetailViewController.xib */; };
+		06DE70A4277E43C2001CACE8 /* CategoryDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE70A3277E43C2001CACE8 /* CategoryDetailRequest.swift */; };
 		DB7B70672771154E00BB8109 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7B70662771154E00BB8109 /* AppDelegate.swift */; };
 		DB7B70692771154E00BB8109 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7B70682771154E00BB8109 /* SceneDelegate.swift */; };
 		DB7B70702771155200BB8109 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7B706F2771155200BB8109 /* Assets.xcassets */; };
@@ -56,6 +61,11 @@
 		06141757277BB9B500C72151 /* UserDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRequest.swift; sourceTree = "<group>"; };
 		067E7B87277B854B009E9519 /* CategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequest.swift; sourceTree = "<group>"; };
 		06D61AB4277A4B1E002EC397 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		06DE709B277E3FCA001CACE8 /* CategoryDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailCoordinator.swift; sourceTree = "<group>"; };
+		06DE709D277E3FE9001CACE8 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
+		06DE709F277E3FFB001CACE8 /* CategoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewModel.swift; sourceTree = "<group>"; };
+		06DE70A1277E4025001CACE8 /* CategoryDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryDetailViewController.xib; sourceTree = "<group>"; };
+		06DE70A3277E43C2001CACE8 /* CategoryDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailRequest.swift; sourceTree = "<group>"; };
 		DB7B70632771154E00BB8109 /* DiscourseClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscourseClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7B70662771154E00BB8109 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB7B70682771154E00BB8109 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06DE7096277E3F84001CACE8 /* CategoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				06DE709B277E3FCA001CACE8 /* CategoryDetailCoordinator.swift */,
+				06DE709D277E3FE9001CACE8 /* CategoryDetailViewController.swift */,
+				06DE709F277E3FFB001CACE8 /* CategoryDetailViewModel.swift */,
+				06DE70A1277E4025001CACE8 /* CategoryDetailViewController.xib */,
+			);
+			path = CategoryDetail;
+			sourceTree = "<group>";
+		};
 		DB7B705A2771154E00BB8109 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +213,7 @@
 				06D61AB4277A4B1E002EC397 /* UserRequest.swift */,
 				067E7B87277B854B009E9519 /* CategoryRequest.swift */,
 				06141757277BB9B500C72151 /* UserDetailRequest.swift */,
+				06DE70A3277E43C2001CACE8 /* CategoryDetailRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -261,8 +283,8 @@
 		DBC5146D27727FA80024F594 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				DBC5146F27727FDC0024F594 /* UsersCoordinator.swift */,
 				DBC5147127727FE80024F594 /* UsersViewModel.swift */,
+				DBC5146F27727FDC0024F594 /* UsersCoordinator.swift */,
 				DBC5147327727FF50024F594 /* UsersViewController.swift */,
 				DBC5147F277284840024F594 /* UserDetail */,
 			);
@@ -275,6 +297,7 @@
 				DBC51477277280460024F594 /* CategoriesViewController.swift */,
 				DBC5147B2772805B0024F594 /* CategoriesCoordinator.swift */,
 				DBC5147D277280630024F594 /* CategoriesViewModel.swift */,
+				06DE7096277E3F84001CACE8 /* CategoryDetail */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -352,6 +375,7 @@
 				DBC51487277284AD0024F594 /* UserDetailViewController.xib in Resources */,
 				DB7B70702771155200BB8109 /* Assets.xcassets in Resources */,
 				DBEC88FF277257500007752D /* CreateTopicViewController.xib in Resources */,
+				06DE70A2277E4025001CACE8 /* CategoryDetailViewController.xib in Resources */,
 				DBEC890F2772653D0007752D /* TopicDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,13 +396,16 @@
 				067E7B88277B854B009E9519 /* CategoryRequest.swift in Sources */,
 				DBC514682772750A0024F594 /* UserDetailResponse.swift in Sources */,
 				DBC5147E277280630024F594 /* CategoriesViewModel.swift in Sources */,
+				06DE709E277E3FE9001CACE8 /* CategoryDetailViewController.swift in Sources */,
 				DB7B707C2771164500BB8109 /* AppCoordinator.swift in Sources */,
 				DBEC890B2772651D0007752D /* TopicDetailViewModel.swift in Sources */,
 				DBEC89032772587A0007752D /* CreateTopicCoordinator.swift in Sources */,
 				DB7B708127711B1700BB8109 /* TopicsViewModel.swift in Sources */,
+				06DE70A4277E43C2001CACE8 /* CategoryDetailRequest.swift in Sources */,
 				DB7B70932771302500BB8109 /* ViewModel.swift in Sources */,
 				DB7B709027712A6500BB8109 /* APIClient.swift in Sources */,
 				DB7B70672771154E00BB8109 /* AppDelegate.swift in Sources */,
+				06DE709C277E3FCA001CACE8 /* CategoryDetailCoordinator.swift in Sources */,
 				DBC51464277274570024F594 /* UsersResponse.swift in Sources */,
 				DBC51479277280460024F594 /* CategoriesViewController.swift in Sources */,
 				DB7B708327711B1F00BB8109 /* TopicsCoordinator.swift in Sources */,
@@ -397,6 +424,7 @@
 				DB7B70692771154E00BB8109 /* SceneDelegate.swift in Sources */,
 				DBC5147C2772805B0024F594 /* CategoriesCoordinator.swift in Sources */,
 				DBEC890527725C590007752D /* CreateTopicRequest.swift in Sources */,
+				06DE70A0277E3FFB001CACE8 /* CategoryDetailViewModel.swift in Sources */,
 				DBC5146C27727C7B0024F594 /* TopicDetailRequest.swift in Sources */,
 				DBC51466277274F40024F594 /* CategoriesResponse.swift in Sources */,
 				DBEC8909277264720007752D /* TopicDetailCoordinator.swift in Sources */,

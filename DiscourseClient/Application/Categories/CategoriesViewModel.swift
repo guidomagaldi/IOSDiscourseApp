@@ -49,6 +49,9 @@ final class CategoriesViewModel: ViewModel {
         return categories[row]
     }
     
+    func didSelectRowAt(at row: Int) {
+        coordinator.didSelect(categoryId: categories[row].id)
    
     
+}
 }

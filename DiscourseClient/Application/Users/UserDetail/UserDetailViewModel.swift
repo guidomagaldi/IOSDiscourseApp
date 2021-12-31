@@ -8,14 +8,16 @@
 import Foundation
 
 protocol UserDetailProtocol: AnyObject{
-    func onUserFetched()
+    //para pasar el user entero lo paso como parametro
+    func onUserFetched(user: UserDetail)
     func onUserFetchedError()
 }
 
 final class UserDetailViewModel: ViewModel {
     
     private var user = [UserDetail]()
-    weak var view : UserDetailProtocol?
+    //Le asigno el delegate que va a estar en el view controller
+    weak var delegate : UserDetailProtocol?
     var username: String
     var userId : Int?
     let coordinator: UserDetailCoordinator
@@ -29,20 +31,18 @@ final class UserDetailViewModel: ViewModel {
     
     func fetchUserDetail() {
         let userDetailRequest = UserDetailRequest(username: username)
-      session.request(request: userDetailRequest) { [weak self] result in
+        session.request(request: userDetailRequest) { [weak self] result in
             guard let self = self else { return }
-          switch result{
-              case .success(let response):
-                  guard let response = response else { return }
-                  self.username = response.username
-                  self.userId = response.id
-                  self.view?.onUserFetched()
-                  print(response)
-              case.failure:
-                  self.view?.onUserFetchedError()
-                  print("Error en fetchUser")
-          }
-
-       }
+            switch result{
+                case .success(let response):
+                    guard let response = response else { return }
+                    self.delegate?.onUserFetched(user: response.user)
+                    print(response)
+                case.failure(let error):
+                    self.delegate?.onUserFetchedError()
+                    print(error.localizedDescription)
+            }
+            
+        }
     }
 }

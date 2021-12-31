@@ -18,12 +18,12 @@ final class CategoriesCoordinator: Coordinator {
         let categoriesViewModel = CategoriesViewModel(coordinator: self)
         let categoriesViewController = CategoriesViewController(viewModel: categoriesViewModel)
         categoriesViewController.title = "Categories"
-        categoriesViewModel.view = categoriesViewController
 
         navigator.pushViewController(categoriesViewController, animated: false)
     }
     
     func didSelect(categoryId: Int) {
-        
+        let categoryDetailCoordinator = CategoryDetailCoordinator(navigator: navigator, categoryId: categoryId )
+        categoryDetailCoordinator.start()
     }
 }
